@@ -29,22 +29,22 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <RadioButton
-                android:id="@+id/radioSuma"
+                android:id="@+id/Suma"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Suma"/>
             <RadioButton
-                android:id="@+id/radioResta"
+                android:id="@+id/Resta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Resta"/>
             <RadioButton
-                android:id="@+id/radioMultiplicacion"
+                android:id="@+id/Multiplicacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Multiplicación"/>
             <RadioButton
-                android:id="@+id/radioDivision"
+                android:id="@+id/Division"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="División"/>
@@ -70,13 +70,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Calcular"
-            android:onClick="calcularOperacion"/>
+            android:onClick="calcularOperaciones"/>
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Dialog Box con resultados"
-            android:onClick=""/>
+            android:id="@+id/dialog"
+            />
 
         <TextView
             android:layout_width="match_parent"
