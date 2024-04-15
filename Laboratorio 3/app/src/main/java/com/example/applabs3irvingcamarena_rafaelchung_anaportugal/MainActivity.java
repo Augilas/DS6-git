@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calcularOperaciones(View view) {
-        int resultado = 0;
+        float resultado;
         try {
             //El controlador de radio
             int IdBotonRadio = radiGroup.getCheckedRadioButtonId();
@@ -56,29 +56,29 @@ public class MainActivity extends AppCompatActivity {
                 String selector = botonRad.getText().toString();
                 switch (selector) {
                     case "Suma":
-                        resultado = Integer.parseInt(txtNum1.getText().toString()) + Integer.parseInt(txtNum2.getText().toString());
+                        resultado = Float.parseFloat(txtNum1.getText().toString()) + Float.parseFloat(txtNum1.getText().toString());
                         Dialogo(selector, resultado, cDialogo.isChecked());
                         break;
                     case "Resta":
-                        resultado = Integer.parseInt(txtNum1.getText().toString()) - Integer.parseInt(txtNum2.getText().toString());
+                        resultado = Float.parseFloat(txtNum1.getText().toString()) - Float.parseFloat(txtNum1.getText().toString());
+                        Dialogo(selector, resultado, cDialogo.isChecked());
+                        break;
+                    case "Multiplicacion":
+                        resultado = (Float.parseFloat(txtNum1.getText().toString())) * (Float.parseFloat(txtNum1.getText().toString()));
                         Dialogo(selector, resultado, cDialogo.isChecked());
                         break;
                     case "Division":
-                        if (Integer.parseInt(txtNum2.getText().toString()) != 0) {
-                            resultado = Integer.parseInt(txtNum1.getText().toString()) / Integer.parseInt(txtNum2.getText().toString());
+                        if (Float.parseFloat(txtNum2.getText().toString()) != 0) {
+                            resultado = Float.parseFloat(txtNum1.getText().toString()) / Float.parseFloat(txtNum1.getText().toString());
                         } else {
                             Toast.makeText(this, "No se puede dividir por cero. Por favor, intente de nuevo", Toast.LENGTH_SHORT).show();
                             resultado = 0;
                         }
+                        Dialogo(selector, resultado, cDialogo.isChecked());
+                        break;
 
-                        Dialogo(selector, resultado, cDialogo.isChecked());
-                        break;
-                    case "Multiplicacion":
-                        resultado = Integer.parseInt(txtNum1.getText().toString()) * Integer.parseInt(txtNum2.getText().toString());
-                        Dialogo(selector, resultado, cDialogo.isChecked());
-                        break;
                     default:
-                        resultado = Integer.parseInt(txtNum1.getText().toString()) % Integer.parseInt(txtNum2.getText().toString());
+                        resultado = Float.parseFloat(txtNum1.getText().toString()) % Float.parseFloat(txtNum1.getText().toString());
                         Dialogo(selector, resultado, cDialogo.isChecked());
                         break;
                 }
