@@ -1,90 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Calculadora básica"
-            android:textSize="100px"/>
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Seleccione el tipo de operación a realizar"
-            android:textSize="50px"/>
-
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/Suma"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Suma"/>
-            <RadioButton
-                android:id="@+id/Resta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Resta"/>
-            <RadioButton
-                android:id="@+id/Multiplicacion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Multiplicacion"/>
-            <RadioButton
-                android:id="@+id/Division"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Division"/>
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculadora básica"
+        android:textSize="40sp"
+        android:layout_alignParentLeft = "true"
 
 
-            </RadioGroup>
+        />
 
+    <TextView
+        android:id="@+id/operation_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seleccione el tipo de operación a realizar"
+        android:textSize="22sp"
+        android:layout_below="@id/title"
+        android:layout_alignParentLeft = "true"
+/>
 
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/operation_text"
+        android:layout_alignParentLeft = "true"
+>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Introduzca primer numero"
-            android:id="@+id/txtNum1"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Introduzca segundo numero"
-            android:id="@+id/txtNum2"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Calcular"
-            android:onClick="calcularOperaciones"/>
-
-        <CheckBox
+        <RadioButton
+            android:id="@+id/Suma"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dialog Box con resultados"
-            android:id="@+id/dialog"
-            />
+            android:text="Suma"/>
 
-        <TextView
-            android:layout_width="match_parent"
+        <RadioButton
+            android:id="@+id/Resta"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/lblRes"
-            android:textSize="50px"/>
+            android:text="Resta"/>
 
-    </LinearLayout>
+        <RadioButton
+            android:id="@+id/Multiplicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Multiplicacion"/>
 
-</LinearLayout>
+        <RadioButton
+            android:id="@+id/Division"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Division"/>
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dialog Box con resultados"
+        android:layout_below="@id/btnCalcular"
+/>
+
+    <EditText
+        android:id="@+id/txtNum1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radioGroup"
+        android:layout_marginTop="16dp"
+        android:hint="Introduzca primer numero"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/txtNum2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtNum1"
+
+        android:hint="Introduzca segundo numero"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        android:onClick="calcularOperaciones"
+        android:layout_below="@id/txtNum2"
+/>
+
+    <TextView
+        android:id="@+id/lblRes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:layout_below="@id/dialog"
+
+        />
+</RelativeLayout>

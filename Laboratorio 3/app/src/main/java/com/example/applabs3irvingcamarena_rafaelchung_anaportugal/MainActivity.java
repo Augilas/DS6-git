@@ -56,20 +56,20 @@ public class MainActivity extends AppCompatActivity {
                 String selector = botonRad.getText().toString();
                 switch (selector) {
                     case "Suma":
-                        resultado = Float.parseFloat(txtNum1.getText().toString()) + Float.parseFloat(txtNum1.getText().toString());
+                        resultado = Float.parseFloat(txtNum1.getText().toString()) + Float.parseFloat(txtNum2.getText().toString());
                         Dialogo(selector, resultado, cDialogo.isChecked());
                         break;
                     case "Resta":
-                        resultado = Float.parseFloat(txtNum1.getText().toString()) - Float.parseFloat(txtNum1.getText().toString());
+                        resultado = Float.parseFloat(txtNum1.getText().toString()) - Float.parseFloat(txtNum2.getText().toString());
                         Dialogo(selector, resultado, cDialogo.isChecked());
                         break;
                     case "Multiplicacion":
-                        resultado = (Float.parseFloat(txtNum1.getText().toString())) * (Float.parseFloat(txtNum1.getText().toString()));
+                        resultado = (Float.parseFloat(txtNum1.getText().toString())) * (Float.parseFloat(txtNum2.getText().toString()));
                         Dialogo(selector, resultado, cDialogo.isChecked());
                         break;
                     case "Division":
                         if (Float.parseFloat(txtNum2.getText().toString()) != 0) {
-                            resultado = Float.parseFloat(txtNum1.getText().toString()) / Float.parseFloat(txtNum1.getText().toString());
+                            resultado = Float.parseFloat(txtNum1.getText().toString()) / Float.parseFloat(txtNum2.getText().toString());
                         } else {
                             Toast.makeText(this, "No se puede dividir por cero. Por favor, intente de nuevo", Toast.LENGTH_SHORT).show();
                             resultado = 0;
@@ -78,13 +78,13 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     default:
-                        resultado = Float.parseFloat(txtNum1.getText().toString()) % Float.parseFloat(txtNum1.getText().toString());
+                        resultado = Float.parseFloat(txtNum1.getText().toString()) % Float.parseFloat(txtNum2.getText().toString());
                         Dialogo(selector, resultado, cDialogo.isChecked());
                         break;
                 }
             }  else {
-            Toast.makeText(this, "Ninguna opción ha sido seleccionada. Por favor, escoja alguna de las operaciones disponibles", Toast.LENGTH_SHORT).show();
-        }
+                Toast.makeText(this, "Ninguna opción ha sido seleccionada. Por favor, escoja alguna de las operaciones disponibles", Toast.LENGTH_SHORT).show();
+            }
 
         } catch (NumberFormatException e) {
             Toast.makeText(this, "Por favor, ingrese valores válidos", Toast.LENGTH_SHORT).show();
