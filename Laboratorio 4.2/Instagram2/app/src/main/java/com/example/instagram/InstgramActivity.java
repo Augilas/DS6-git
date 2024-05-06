@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class InstagramActivity extends AppCompatActivity {
+public class InstgramActivity extends AppCompatActivity {
 
     ListView lstOpciones;
 
@@ -48,7 +48,7 @@ public class InstagramActivity extends AppCompatActivity {
                 //      ((TextView)v.findViewById(R.id.LblTitulo))
                 //          .getText().toString();
 
-                Toast.makeText(InstagramActivity.this,"Opción seleccionada: " + opcionSeleccionada, Toast.LENGTH_LONG).show();
+                Toast.makeText(InstgramActivity.this,"Opción seleccionada: " + opcionSeleccionada, Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -103,7 +103,7 @@ public class InstagramActivity extends AppCompatActivity {
 
     @Override
     public  boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
+        getMenuInflater().inflate(R.menu.action_menu, menu);
         return true;
     }
 
@@ -123,7 +123,7 @@ public class InstagramActivity extends AppCompatActivity {
         try {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Agregar nuevo elemento");
-            View viewInflated = LayoutInflater.from(this).inflate(R.layout.dialog_nuevoitem, (ViewGroup) findViewById(android.R.id.content), false);
+            View viewInflated = LayoutInflater.from(this).inflate(R.layout.dialog_newitem, (ViewGroup) findViewById(android.R.id.content), false);
 
             EditText Titulo = viewInflated.findViewById(R.id.titulo);
             EditText Subtitulo = viewInflated.findViewById(R.id.subtitulo);
